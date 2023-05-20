@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+# 리액트
+* mvc, mvw 와는 달리 오직 View만을 위해 개발된 js 라이브러리임.
+* 지속적으로 데이터가 변화하는 대규모 어플리케이션 구축에 적합함.
+* Virtual Dom을 사용함.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Dom
+* Document Object Model
+* 객체로 문서 구조를 표현하는 방법으로 Xml, Html로 작성함.
+* 정적파일이기 때문에 동적에 취약함.
+![Dom](/Dom%EA%B5%AC%EC%A1%B0.png)
 
-## Available Scripts
+# Virtual Dom
+* 실제 Dom에 접근하여 조작하는 대신, 이를 추상화한 JS로 객체를 구성하여 Dom의 사본을 만든 것.
 
-In the project directory, you can run:
+# Virtual Dom 절차
+1. 데이터를 업데이트하면 전체 UI를 Virtual Dom에 리렌더링함.
+2. 이전 Virtual Dom에 있던 내용과 현재 내용을 비교함.
+3. 바뀐 부분만 실제 Dom에 적용
 
-### `yarn start`
+# 단어
+* 크로스 브라우징: 일부 최신 브라우저에만 동작하는 기능을 추가할 때 안되는 브라우저는 해당 기능을 지우거나 수정해야함.
+* 바벨: 크로스 브라우징과 같은 이슈를 해결해주는데, 모든 브라우저에서 동작할 수 있도록 호환성을 지켜주게해줌.
+    - 바벨은 세 단계로 빌드를 진행함.
+        > 파싱
+        > 변환
+        > 출력
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* 번들링: 모듈화된 코드를 한 파일로 합침.
+* 웹팩: 번들링, 코드 수정할 때마다 웹 브라우저를 리로딩하는 등의 기능을 지님.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `yarn test`
+# Props
+* 부모 컴포넌트가 자식 컴포넌트에게 데이터를 던져 줄 때 쓰임.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# State
+* 컴포넌트 내부에서 바뀔 수 있는 값을 의미함.

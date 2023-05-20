@@ -1,25 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Counter from "./Counter";
+import MyComponent from "./MyComponent";
+import MyTestComponent from "./MyTestComponent";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <MyComponent test='qqq'> 요놈이 </MyComponent>
+      <MyTestComponent qwer="test"></MyTestComponent>
+
+      <Counter name="test"></Counter>
     </div>
-  );
+    );
 }
 
 export default App;
