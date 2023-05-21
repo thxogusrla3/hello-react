@@ -1,13 +1,15 @@
-import Counter from "./Counter";
-import MyComponent from "./MyComponent";
-import MyTestComponent from "./MyTestComponent";
+import EventPractice from "./EventPractice";
 function App() {
+  const style = {
+    marginLeft:'10px',
+  }
   return (
-    <div>
-      <MyComponent test='qqq'> 요놈이 </MyComponent>
+    <div style={style}>
+      {/* <MyComponent test='qqq'> 요놈이 </MyComponent>
       <MyTestComponent qwer="test"></MyTestComponent>
-
-      <Counter name="test"></Counter>
+      <Counter name="test"></Counter> */}
+      {/* <Say /> */}
+      <EventPractice />
     </div>
     );
 }

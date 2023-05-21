@@ -27,10 +27,100 @@
 
 * 번들링: 모듈화된 코드를 한 파일로 합침.
 * 웹팩: 번들링, 코드 수정할 때마다 웹 브라우저를 리로딩하는 등의 기능을 지님.
+# Prettier
+* 자동 코드 정리 툴
+* '' => "" , Tabe size = 2 => 4 등등
+* rsc 입력 시 파일의 컴포넌트 자동 생성
 
+# 컴포넌트
+1. 함수형 컴포넌트
+    function App() {
+        const name = 'react';
+        return <div className="react">{name}</div>
+    }
+
+2. 클래스 컴포넌트
+    class App extends Component {
+        render() {
+            const name = 'react';
+            return <div className="react">{name}</div>
+        }
+    }
+
+# 함수형과 클래스형의 차이점
+* 클래스형은 State 와 Lifecyle 기능을 사용할 수 있지만 함수형은 사용하지 못함.
+* 클래스형은 임시 메스드를 정의할 수 있음.
+* 클래스형은 render 함수가 꼭 있어야 함.
+* 함수형은 Hooks와 함께 사용하면 State, Lifecyle 기능은 사용할 수 있게 됨. 
+* 클래스형 < 함수형 + Hooks | 방식을 선호함
 
 # Props
-* 부모 컴포넌트가 자식 컴포넌트에게 데이터를 던져 줄 때 쓰임.
+* 부모 컴포넌트가 자식 컴포넌트에게 데이터를 넘겨줄 데이터를 설정해줌.
+* 부모 컴포넌트만 props를 수정할 수 있음.
 
 # State
 * 컴포넌트 내부에서 바뀔 수 있는 값을 의미함.
+* 클래스형 컴포넌트의 state
+    import React, { Component } from 'react';
+    class Counter extends Component {
+        constructor(qwer) {
+            super(qwer); //Component의 State 값을 쓰기 위해 상속을 받는 것
+
+            this.state = {
+                number:0,
+                test: 12,
+            };
+
+        }
+        render() {
+            let { number, test } = this.state;
+            return (
+                <div>
+                    <h1>{number}</h1>
+                    <button onClick={() => {
+                        this.setState({ number: number + 1});  //setState는 
+                    }}> + 1
+                    </button>
+                    <button onClick={() => { this.setState({ number: number - 1}); }}> - 1 </button>
+                    <br></br>
+                    <h1>{test}</h1>
+                    <button onClick={() => { this.setState({ test: number + 1}); }}> test + 1 </button>
+                </div>
+            );
+        }
+    }
+
+* 함수형 컴포넌트의 state
+    import {React, useState} from 'react';
+    const Say = () => {
+        const [msg, setMsg] = useState('');
+        const onClickEnter = () => {setMsg('안녕하세요');}
+        const onClickLeave = () => {setMsg('가세요.');}
+
+        const [color, setColor] = useState('black');
+
+        return (
+            <div>
+                <button onClick={onClickEnter}>입장</button>        
+                <button onClick={onClickLeave}>퇴장</button>
+                <h1 style={{color}}>{msg}</h1>
+
+                <button style={{color: 'red'}} onClick={() => setColor('red')}>빨강</button>
+                <button style={{color: 'green'}} onClick={() => setColor('green')}>초록</button>
+                <button style={{color: 'blue'}} onClick={() => setColor('blue')}>파랑</button>
+            </div>
+        );
+    };
+
+* useState 값이 여러개일 때
+    const [form, setForm] = useState({
+        username:'',
+        msg:'',
+    });
+    
+# 리액트 이벤트
+1. 카멜표기법으로 이벤트 작성 ex - onClick, onKeyUp 
+2. 이벤트에 실행할 JS코드를 전달하는 것이 아니라, 함수 형태의 값을 전달
+3. Dom 요소에만 이벤트를 설정할 수 있음.
+    <MyComponent onClick={doSomeThing}>       // X
+    <div onClick={this.props.onClick}></div>  // O 
