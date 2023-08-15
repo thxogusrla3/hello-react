@@ -9,7 +9,7 @@ const EventPractice = () => {
     const {username, msg} = form;
     const onChange = (e) => {
         const nextForm = {
-            ...form,
+            ...form,    // 비구조화 할당 문법
             [e.target.name] : e.target.value
         }
         console.log(nextForm);

@@ -1,3 +1,11 @@
+# 세팅
+- npm install --global yran //yarn은 npm 대체 할 수 있는 도구로 npm보다 더 빠르며 효율적인 캐시 시스템과 부가 기능을 제공함
+- yarn create react-app hello-react // react 프로젝트 생성
+- yarn start
+
+# 확장프로그램
+- Reactjs Code Snippet: rsc 로 코드 자동 생성
+
 # 리액트
 * mvc, mvw 와는 달리 오직 View만을 위해 개발된 js 라이브러리임.
 * 지속적으로 데이터가 변화하는 대규모 어플리케이션 구축에 적합함.
@@ -25,14 +33,18 @@
         > 변환
         > 출력
 
+* 번들러: 브라우저에서도 사용하기 위해 번들러가 사용되며, 주로 웹팩이 사용된다.
 * 번들링: 모듈화된 코드를 한 파일로 합침.
 * 웹팩: 번들링, 코드 수정할 때마다 웹 브라우저를 리로딩하는 등의 기능을 지님.
+
 # Prettier
 * 자동 코드 정리 툴
 * '' => "" , Tabe size = 2 => 4 등등
 * rsc 입력 시 파일의 컴포넌트 자동 생성
 
 # 컴포넌트
+- 특정 부분이 어떻게 생길지 정하는 선언체
+
 1. 함수형 컴포넌트
     function App() {
         const name = 'react';
@@ -49,6 +61,7 @@
 
 # 함수형과 클래스형의 차이점
 * 클래스형은 State 와 Lifecyle 기능을 사용할 수 있지만 함수형은 사용하지 못함.
+* 메모리 자원은 함수 컴포넌트가 덜 사용된다.
 * 클래스형은 임시 메스드를 정의할 수 있음.
 * 클래스형은 render 함수가 꼭 있어야 함.
 * 함수형은 Hooks와 함께 사용하면 State, Lifecyle 기능은 사용할 수 있게 됨. 
@@ -56,10 +69,11 @@
 
 # Props
 * 부모 컴포넌트가 자식 컴포넌트에게 데이터를 넘겨줄 데이터를 설정해줌.
-* 부모 컴포넌트만 props를 수정할 수 있음.
+* 부모 컴포넌트만 props를 수정할 수 있음. 자식 컴포넌트에게는 읽기전용임.
 
 # State
 * 컴포넌트 내부에서 바뀔 수 있는 값을 의미함.
+* 클래스형 컴포넌트는 state, 함수형 컴포넌트는 useState
 * 클래스형 컴포넌트의 state
     import React, { Component } from 'react';
     class Counter extends Component {
